@@ -9,8 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='38' fill='none' stroke='%230E7A4F' stroke-width='16'/></svg>">
-<style>
-:root{--ink:#07231A;--deep:#0A3D2C;--em:#0E7A4F;--em2:#19A86C;--gold:#C9A24B;--sand:#F6F3EC;--tx:#12291F;--lt:#E9F2EC;--mut:#8FB3A2}
+<style>:root{--ink:#07231A;--deep:#0A3D2C;--em:#0E7A4F;--em2:#19A86C;--gold:#C9A24B;--sand:#F6F3EC;--tx:#12291F;--lt:#E9F2EC;--mut:#8FB3A2}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',system-ui,sans-serif;color:var(--tx);background:var(--sand);line-height:1.75}
 h1,h2,h3,.logo,.st b{font-family:'Space Grotesk','Inter',sans-serif}
@@ -29,6 +28,7 @@ img{max-width:100%;display:block}
 .cta{background:var(--em);color:#fff;padding:9px 18px;border-radius:8px;font-size:14px;font-weight:600}
 .cta:hover{background:var(--em2)}
 .hero{position:relative;background:linear-gradient(160deg,var(--ink) 0%,var(--deep) 70%,#0C4A34 100%);color:var(--lt);padding:92px 0 70px;overflow:hidden}
+.hero.slim{padding:64px 0 48px}
 .hero svg.fiber{position:absolute;inset-inline-end:0;top:0;height:100%;width:62%;opacity:.9;pointer-events:none}
 .hero .wrap{position:relative;z-index:2}
 .kicker{color:var(--gold);font-size:13px;font-weight:600;letter-spacing:.03em;margin-bottom:18px}
@@ -67,16 +67,41 @@ h2.sec::after{content:"";display:block;width:52px;height:3px;background:var(--go
 .pcta{display:inline-block;background:var(--em);color:#fff;padding:14px 34px;border-radius:10px;font-weight:700;font-size:16px}
 .pcta:hover{background:var(--em2)}
 .catl{display:inline-block;margin-top:16px;color:var(--em);font-weight:600;font-size:14px;border-bottom:1px solid var(--gold)}
+.wall{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.wsec{background:#fff;border:1px solid #E2DCCB;border-radius:14px;padding:22px}
+.wsec h3{color:var(--deep);font-size:15px;margin-bottom:12px;border-bottom:2px solid var(--gold);display:inline-block;padding-bottom:4px}
+.wsec ul{list-style:none}
+.wsec li{padding:5px 0;font-size:14.5px;color:#33473C;border-bottom:1px dashed #E4DFD0;font-weight:600}
+.wsec li:last-child{border-bottom:0}
+.note{font-size:12.5px;color:#7A8B80;max-width:52em;margin-top:22px}
+.qcard{background:#fff;border:1px solid #E2DCCB;border-radius:16px;padding:30px 28px;max-width:760px;margin:0 auto}
+.qh{font-size:14px;font-weight:700;color:var(--deep);margin:20px 0 8px}
+.qchips{display:flex;flex-wrap:wrap;gap:8px}
+.qchips.bad{outline:2px solid #C0392B;outline-offset:4px;border-radius:8px}
+.qchip{border:1.5px solid #C8DFD0;border-radius:99px;padding:7px 15px;font-size:13.5px;cursor:pointer;user-select:none;background:#FBFDFB;color:#2A4437}
+.qchip.on{background:var(--em);border-color:var(--em);color:#fff;font-weight:600}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.frow{grid-template-columns:1fr}}
+input[type=text],input[type=email],input[type=tel],textarea{width:100%;border:1.5px solid #C8DFD0;border-radius:9px;padding:10px 13px;font:inherit;font-size:14px;background:#FBFDFB;color:var(--tx)}
+input.bad,textarea.bad{border-color:#C0392B}
+textarea{min-height:84px;resize:vertical}
+.rfile{display:inline-flex;align-items:center;gap:7px;background:#EDF5F0;border:1px solid #C8DFD0;border-radius:8px;padding:4px 10px;font-size:12.5px;margin:6px 6px 0 0}
+.rfile b{color:var(--em);font-weight:600}
+.rfile button{border:0;background:none;cursor:pointer;color:#C0392B;font-size:13px}
+.rsubmit{margin-top:22px;width:100%;background:var(--em);color:#fff;border:0;border-radius:10px;padding:14px;font:inherit;font-size:16px;font-weight:700;cursor:pointer}
+.rsubmit:hover{background:var(--em2)}
+.rerr{color:#C0392B;font-size:13.5px;margin-top:10px;font-weight:600}
+.rok{background:#E6F7EE;border:1.5px solid var(--em2);border-radius:14px;padding:26px;text-align:center;font-size:16px;font-weight:600;color:var(--deep)}
+.attach{border:1.5px dashed #B9CFC2;border-radius:10px;padding:14px;text-align:center;font-size:13px;color:#5A7265;cursor:pointer;background:#FBFDFB}
 footer{background:var(--ink);color:var(--mut);padding:36px 0;font-size:13.5px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
 footer a{color:var(--gold)}
-@media(max-width:860px){.nav{display:none}.hero{padding:64px 0 48px}.hero svg.fiber{width:100%;opacity:.35}}
-</style></head><body>
+@media(max-width:860px){.nav{display:none}.hero{padding:64px 0 48px}.hero svg.fiber{width:100%;opacity:.35}}</style></head><body>
 <div class="top"><div class="wrap">
 <a class="logo" href="./"><span class="ring"></span>EXCEL UNIT&nbsp;<small>KSA</small></a>
-<nav class="nav"><a href="#brands">Products</a><a href="#cases">Track Record</a><a href="#partner">Partnership</a><a href="mailto:info@excelunit.com.hk">Contact</a></nav>
+<nav class="nav"><a href="./">Home</a><a href="/product">Products</a><a href="/usecases/en">Track Record</a><a href="/quote/en">Contact</a></nav>
 <a class="lang" href="./">العربية</a>
-<a class="cta" href="mailto:info@excelunit.com.hk?subject=KSA%20Quote%20Request">Request a Quote</a>
+<a class="cta" href="/quote/en">Request a Quote</a>
 </div></div>
 <div class="hero">
 <svg class="fiber" viewBox="0 0 760 520" fill="none"><g stroke="#C9A24B" stroke-opacity=".38"><path d="M-40 480 C 220 430, 300 180, 760 120" stroke-width="1.5"/><path d="M-40 500 C 240 460, 320 220, 780 160" stroke-width="1"/></g><g stroke="#19A86C" stroke-opacity=".5"><path d="M-40 460 C 200 400, 280 140, 740 80" stroke-width="1.2"/><path d="M-40 520 C 260 490, 340 260, 800 200" stroke-width=".7"/></g><g fill="#C9A24B" fill-opacity=".85"><circle cx="640" cy="139" r="3"/><circle cx="520" cy="205" r="2.2"/><circle cx="410" cy="292" r="2.6"/><circle cx="300" cy="378" r="2"/></g></svg>
@@ -88,15 +113,15 @@ footer a{color:var(--gold)}
 </div></div>
 <div class="v2030"><div class="wrap"><h2>Ready for Vision 2030</h2><p>Data centers, smart cities and giga-projects all begin with a dependable physical layer. We supply the cabling and fiber infrastructure the AI era runs on — at the speed of light.</p></div></div>
 <section id="brands"><div class="wrap"><h2 class="sec">Four global platforms, one supply chain</h2><div class="bgrid"><div class="bc"><h3>SYSTIMAX®</h3><p>The premium enterprise and data-center cabling platform — GigaSPEED X10D®, LazrSPEED®, TeraSPEED® and Propel™.</p></div><div class="bc"><h3>NETCONNECT®</h3><p>High-value commercial copper and fiber for offices and smart buildings.</p></div><div class="bc"><h3>CPI Chatsworth®</h3><p>Cabinets, racks, cable management and power distribution for data centers.</p></div><div class="bc"><h3>KRONE®</h3><p>The world-proven voice and LSA-PLUS® termination system.</p></div></div></div></section>
-<section id="cases" style="padding-top:0"><div class="wrap"><h2 class="sec">A track record across APAC</h2><div class="ucg"><a class="uc" href="https://www.excelunit.com.hk/usecases"><img src="img/uc/nvidia.jpg" alt="NVIDIA — Taiwan" loading="lazy"><div class="ucx"><h3>NVIDIA — Taiwan</h3><p>NVIDIA Data Center Taiwan runs on CommScope’s Propel™ fiber platform — the same ecosystem we stock and deliver for data-center projects across the region.</p></div></a><a class="uc" href="https://www.excelunit.com.hk/usecases"><img src="img/uc/hkex-dc.jpg" alt="Hong Kong Exchanges (HKEX)" loading="lazy"><div class="ucx"><h3>Hong Kong Exchanges (HKEX)</h3><p>SYSTIMAX® infrastructure for the data center and trading halls where downtime is not an option.</p></div></a><a class="uc" href="https://www.excelunit.com.hk/usecases"><img src="img/uc/runway3.jpg" alt="Hong Kong International Airport" loading="lazy"><div class="ucx"><h3>Hong Kong International Airport</h3><p>The Three-Runway System — airport-wide fiber backbone infrastructure.</p></div></a></div></div></section>
+<section id="cases" style="padding-top:0"><div class="wrap"><h2 class="sec">A track record across APAC</h2><div class="ucg"><a class="uc" href="/usecases/en"><img src="img/uc/nvidia.jpg" alt="NVIDIA — Taiwan" loading="lazy"><div class="ucx"><h3>NVIDIA — Taiwan</h3><p>NVIDIA Data Center Taiwan runs on CommScope’s Propel™ fiber platform — the same ecosystem we stock and deliver for data-center projects across the region.</p></div></a><a class="uc" href="/usecases/en"><img src="img/uc/hkex-dc.jpg" alt="Hong Kong Exchanges (HKEX)" loading="lazy"><div class="ucx"><h3>Hong Kong Exchanges (HKEX)</h3><p>SYSTIMAX® infrastructure for the data center and trading halls where downtime is not an option.</p></div></a><a class="uc" href="/usecases/en"><img src="img/uc/runway3.jpg" alt="Hong Kong International Airport" loading="lazy"><div class="ucx"><h3>Hong Kong International Airport</h3><p>The Three-Runway System — airport-wide fiber backbone infrastructure.</p></div></a></div></div></section>
 <section class="offer"><div class="wrap"><h2 class="sec">Why Excel Unit in the Kingdom?</h2><div class="ogrid"><div class="of"><h3>Ex-stock + air freight</h3><p>2,000+ genuine products in our warehouse, with direct air freight to Riyadh, Jeddah and Dammam.</p></div><div class="of"><h3>Engineering & BOM support</h3><p>We review drawings, build bills of materials and match substitutions — before you buy.</p></div><div class="of"><h3>An authorized channel</h3><p>Official CommScope-authorized supply since 2010 — full product authenticity and warranty retained.</p></div></div></div></section>
 <section id="partner" class="partner"><div class="wrap">
 <h2 class="sec" style="display:inline-block">For distributors & system integrators in KSA</h2>
 <p>We are looking for partners across Saudi Arabia — distributors, ELV contractors and system integrators. Write to us for price lists, availability and project support.</p>
-<a class="pcta" href="mailto:info@excelunit.com.hk?subject=KSA%20Partnership%20Inquiry">Start the conversation</a><br>
-<a class="catl" href="https://www.excelunit.com.hk/product">Browse the full catalogue</a>
+<a class="pcta" href="/quote/en">Start the conversation</a><br>
+<a class="catl" href="/product">Browse the full catalogue</a>
 </div></section>
-<footer><div class="wrap"><div>Excel Unit Technology Ltd — authorized CommScope & CPI Chatsworth distributor across APAC. Established 2010.</div>
-<div><a href="https://www.excelunit.com.hk/">Main site</a> · <a href="mailto:info@excelunit.com.hk">info@excelunit.com.hk</a> · <a href="https://www.linkedin.com/company/excel-unit-technology-ltd">LinkedIn</a></div>
+<footer><div class="wrap"><div style="max-width:44em">Excel Unit Technology Ltd — authorized CommScope & CPI Chatsworth distributor across APAC. Established 2010.<br>A subsidiary of Excel Unit Technology Ltd (Hong Kong)<br>Al Olaya District, Prince Sultan Ibn Abdulaziz Road, Riyadh, Kingdom of Saudi Arabia</div>
+<div><a href="mailto:info@excelunit.com.hk">info@excelunit.com.hk</a></div>
 </div></footer>
 </body></html>
