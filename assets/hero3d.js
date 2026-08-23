@@ -31,12 +31,12 @@ for(var i=0;i<N;i++){
 }
 var group=new THREE.Group(); scene.add(group);
 var pgeo=new THREE.BufferGeometry().setFromPoints(nodes);
-var pts=new THREE.Points(pgeo, new THREE.PointsMaterial({size:.16, map:tex, transparent:true, opacity:.95, color:0x9CC7FF, blending:THREE.AdditiveBlending, depthWrite:false}));
+var pts=new THREE.Points(pgeo, new THREE.PointsMaterial({size:.16, map:tex, transparent:true, opacity:.95, color:0x52C08A, blending:THREE.AdditiveBlending, depthWrite:false}));
 group.add(pts);
 
 /* edges — nearest neighbours, curved */
 var curves=[], lineGroup=new THREE.Group(); group.add(lineGroup);
-var lmat=new THREE.LineBasicMaterial({color:0x3B76D8, transparent:true, opacity:.24, blending:THREE.AdditiveBlending, depthWrite:false});
+var lmat=new THREE.LineBasicMaterial({color:0x0E7A4F, transparent:true, opacity:.24, blending:THREE.AdditiveBlending, depthWrite:false});
 for(var i=0;i<N;i++){
   var d=[], a=nodes[i];
   for(var j=0;j<N;j++){ if(i!==j) d.push([a.distanceTo(nodes[j]), j]); }
@@ -54,7 +54,7 @@ for(var i=0;i<N;i++){
 
 /* pulses along random curves */
 var P=26, pulses=[];
-var pmat=new THREE.SpriteMaterial({map:tex, color:0xBFE0FF, transparent:true, blending:THREE.AdditiveBlending, depthWrite:false});
+var pmat=new THREE.SpriteMaterial({map:tex, color:0xC9A24B, transparent:true, blending:THREE.AdditiveBlending, depthWrite:false});
 for(var i=0;i<P;i++){
   var s=new THREE.Sprite(pmat.clone());
   s.scale.set(.34,.34,1);
@@ -63,7 +63,7 @@ for(var i=0;i<P;i++){
 }
 
 /* core */
-var core=new THREE.Sprite(new THREE.SpriteMaterial({map:tex, color:0x7FB0FF, transparent:true, opacity:.9, blending:THREE.AdditiveBlending, depthWrite:false}));
+var core=new THREE.Sprite(new THREE.SpriteMaterial({map:tex, color:0x19A86C, transparent:true, opacity:.9, blending:THREE.AdditiveBlending, depthWrite:false}));
 core.scale.set(2.6,2.6,1); group.add(core);
 
 group.position.x=3.4; group.rotation.z=.06;
