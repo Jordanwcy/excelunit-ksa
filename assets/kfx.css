@@ -1,0 +1,35 @@
+@media (prefers-reduced-motion: no-preference){
+html.js .kfx{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}
+html.js .kfx.kleft{transform:translateX(-44px)}
+html.js .kfx.kright{transform:translateX(44px)}
+html.js .kfx.on{opacity:1;transform:none}
+@keyframes krise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero .kicker{animation:krise .7s .1s both}
+.hero h1{animation:krise .8s .25s both}
+.hero .sub{animation:krise .8s .45s both}
+.hero .stats{animation:krise .8s .65s both}
+.uchero h1{animation:krise .8s .15s both}
+.uchero p{animation:krise .8s .4s both}
+.fiber circle{animation:kpulse 3s ease-in-out infinite}
+.fiber circle:nth-of-type(2){animation-delay:.7s}
+.fiber circle:nth-of-type(3){animation-delay:1.4s}
+.fiber circle:nth-of-type(4){animation-delay:2.1s}
+@keyframes kpulse{0%,100%{opacity:.35}50%{opacity:1}}
+.bc,.ind,.of,.svc,.uc,.mini,.wsec,.spot{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.bc:hover,.ind:hover,.of:hover,.svc:hover,.mini:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(7,35,26,.13)}
+.spot:hover{box-shadow:0 18px 44px rgba(7,35,26,.10)}
+.uc{overflow:hidden}
+.uc img,.svc img{transition:transform .6s ease}
+.uc:hover img,.svc:hover img{transform:scale(1.05)}
+.mini .mtop{transition:transform .6s ease}
+.mini:hover .mtop{transform:scale(1.04)}
+.cta,.pcta,.rsubmit,.lang{transition:transform .25s ease,background .25s ease,color .25s ease}
+.cta:hover,.pcta:hover{transform:translateY(-2px)}
+.chips3 a{transition:transform .2s ease,background .2s ease}
+.chips3 a:hover{transform:translateY(-2px)}
+.vis{position:relative;overflow:hidden}
+.vis::before{content:"";position:absolute;inset:-60% -30%;background:radial-gradient(circle at 30% 35%,rgba(25,168,108,.14),transparent 42%),radial-gradient(circle at 70% 70%,rgba(201,162,75,.09),transparent 45%);animation:kdrift 16s ease-in-out infinite alternate;pointer-events:none}
+@keyframes kdrift{to{transform:translate(14%,10%) scale(1.08)}}
+.vis>.wrap{position:relative;z-index:1}
+.mhero-none{}
+}
