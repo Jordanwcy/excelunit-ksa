@@ -36,7 +36,7 @@ if (finput){
   finput.addEventListener('change', function(){
     [].slice.call(finput.files).forEach(function(f){
       if (files.length >= 5) return;
-      if (f.size > 15*1048576){ alert(f.name+' is over 15 MB — please email it to info@excelunit-ksa.com instead.'); return; }
+      if (f.size > 15*1048576){ alert(f.name+' is over 15 MB — please email it to sales@excelunit-ksa.com instead.'); return; }
       files.push(f);
     });
     finput.value=''; renderFiles();
@@ -117,7 +117,7 @@ form.addEventListener('submit', function(e){
       (files.length ? 'ATTACHMENTS — I am attaching to this email: '+payload.attachments.join(', ') : ''),
       'Submitted from: '+location.href
     ];
-    location.href = 'mailto:info@excelunit-ksa.com?cc=jordan%40excelunit.com.hk&subject='
+    location.href = 'mailto:sales@excelunit-ksa.com?cc=jordan%40excelunit.com.hk&subject='
       + encodeURIComponent('KSA Quote request — '+company+' ('+(products[0]||'general')+')')
       + '&body=' + encodeURIComponent(lines.join('\n'));
     done();
