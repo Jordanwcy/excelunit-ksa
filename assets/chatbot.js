@@ -45,7 +45,12 @@ var SYN = {
 var ZH2EN = {'藍':'blue','白':'white','黑':'black','灰':'grey','紅':'red','黃':'yellow','綠':'green',
 '單模':'singlemode','多模':'multimode','屏蔽':'ftp','非屏蔽':'utp','防火':'lszh','鎧裝':'armored',
 '室外':'outdoor','室內':'indoor','跳線':'cord','光纖':'fiber','銅':'copper','插座':'jack','面板':'faceplate',
-'配線架':'panel','機櫃':'rack','工具':'tool','現貨':'instock'};
+'配線架':'panel','機櫃':'rack','工具':'tool','現貨':'instock',
+'كابل':'cable','نحاسي':'copper','نحاس':'copper','ألياف':'fiber','الألياف':'fiber','ليف':'fiber',
+'وصلة':'cord','جامبر':'jumper','مقبس':'jack','مقابس':'jack','لوحة':'panel','لوحات':'panel',
+'خزانة':'rack','خزائن':'rack','أحادي':'singlemode','متعدد':'multimode',
+'أزرق':'blue','أبيض':'white','أسود':'black','أحمر':'red','أصفر':'yellow','أخضر':'green','رمادي':'grey',
+'خارجي':'outdoor','داخلي':'indoor','مدرع':'armored','مدرعة':'armored','أدوات':'tool','مخزون':'instock'};
 var STOP = ['the','a','an','i','need','want','looking','for','some','please','show','me','find','with','and','or',
 'of','in','do','you','have','any','products','product','item','items','buy','price','quote','only','just','all',
 'give','get','something','type','kind','我','想','要','請','找','有','嗎','的'];
@@ -109,12 +114,12 @@ function el(tag,cls,html){ var e=document.createElement(tag); if(cls)e.className
 function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'); }
 var box, log, input;
 function build(){
-  var launcher = el('button','cbl','<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 8.5-8.5 8.38 8.38 0 0 1 8.5 8.5z"/></svg><span>Product Finder</span>');
+  var launcher = el('button','cbl','<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 8.5-8.5 8.38 8.38 0 0 1 8.5 8.5z"/></svg><span>Product Finder · دليل المنتجات</span>');
   launcher.setAttribute('aria-label','Open product finder chat');
   box = el('div','cbx');
-  box.innerHTML = '<div class="cbh"><div><b>Product Finder 產品助手</b><span>2,000+ SKUs · SYSTIMAX · NETCONNECT · CPI · KRONE</span></div><button class="cbc" aria-label="Close">✕</button></div>'+
+  box.innerHTML = '<div class="cbh"><div><b>Product Finder · دليل المنتجات</b><span>2,000+ SKUs · SYSTIMAX · NETCONNECT · CPI · KRONE</span></div><button class="cbc" aria-label="Close">✕</button></div>'+
     '<div class="cblog" role="log" aria-live="polite"></div>'+
-    '<form class="cbf"><input type="text" placeholder="e.g. cat6a lszh cable · 24 core OS2 · LC跳線 3m…" autocomplete="off" aria-label="Describe the product you need"><button type="submit" aria-label="Send">➤</button></form>';
+    '<form class="cbf"><input type="text" placeholder="e.g. cat6a lszh cable · OM4 MPO · اكتب بالعربية أو الإنجليزية…" autocomplete="off" aria-label="Describe the product you need"><button type="submit" aria-label="Send">➤</button></form>';
   document.body.appendChild(launcher); document.body.appendChild(box);
   log = box.querySelector('.cblog'); input = box.querySelector('input');
   launcher.addEventListener('click',function(){ box.classList.toggle('open'); if(box.classList.contains('open')){ input.focus(); if(!log.children.length) hello(); }});
@@ -142,7 +147,7 @@ function cards(res,n){
   log.appendChild(wrap); log.scrollTop=log.scrollHeight;
 }
 function hello(){
-  bubble('bot','Hi! Describe what you need and I\'ll find it in our catalogue — part numbers, specs or plain words all work. 直接輸入規格或中文關鍵字亦可。');
+  bubble('bot','Hi! Describe what you need and I\'ll find it in our catalogue — part numbers, specs or plain words all work. تحدث بالعربية أو الإنجليزية — اكتب المواصفات أو رقم القطعة.');
   chips([['Cat6A LSZH cable'],['24-core OS2 fiber'],['LC-LC patch cord 3m'],['CPI racks'],['Krone modules']]);
 }
 
@@ -158,13 +163,13 @@ function answer(msg){
   var p = parse(msg);
   if (p.intent==='greet' && !p.brand && !p.cat && !p.terms.length){ hello(); return; }
   if (p.intent==='quote'){
-    bubble('bot','For distributor pricing, send the part numbers via our quote form — we reply within 1 business day. 一個工作天內回覆。');
-    var c=el('div','cbchips'); var a=el('a','cbchip','Request a Quote 索取報價');
+    bubble('bot','For distributor pricing, send the part numbers via our quote form — we reply within 1 business day. نرد خلال يوم عمل واحد.');
+    var c=el('div','cbchips'); var a=el('a','cbchip','Request a Quote · اطلب عرض سعر');
     a.href=R+'quote'; c.appendChild(a);
     log.appendChild(c); return;
   }
   if (p.intent==='contact'){ bubble('bot','✉ info@excelunit-ksa.com · jordan@excelunit.com.hk<br>Al Olaya District, Prince Sultan Ibn Abdulaziz Road, Riyadh, Kingdom of Saudi Arabia'); return; }
-  if (p.reset){ state={brand:'',cat:'',catSlug:'',terms:[],stock:false}; bubble('bot','Fresh start — what are you looking for? 重新開始。'); return; }
+  if (p.reset){ state={brand:'',cat:'',catSlug:'',terms:[],stock:false}; bubble('bot','Fresh start — what are you looking for? لنبدأ من جديد — ماذا تبحث عنه؟'); return; }
   // bare part-number / SKU lookup -> global search, ignore previous filters
   var lone = msg.trim().toLowerCase();
   if (!p.cat && !p.brand && /^[a-z0-9][a-z0-9./ -]{5,24}$/.test(lone) && /\d{3}/.test(lone) && lone.split(/\s+/).length<=2){
@@ -193,7 +198,7 @@ function answer(msg){
   state.terms.forEach(function(t){f.push(t)});
   if(state.stock)f.push('ex-stock');
   if(!res.length){
-    bubble('bot','No match for <b>'+esc(f.join(' · '))+'</b>. Try a different spec, or send us the part number — if CommScope makes it, we can source it. 找不到相符產品，歡迎直接查詢。');
+    bubble('bot','No match for <b>'+esc(f.join(' · '))+'</b>. Try a different spec, or send us the part number — if CommScope makes it, we can source it. لم نجد منتجاً مطابقاً — أرسل لنا رقم القطعة مباشرة.');
     chips([['Browse all categories','__cats'],['Request a Quote','how to get a quote']]);
     return;
   }
