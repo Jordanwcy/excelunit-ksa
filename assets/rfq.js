@@ -3,7 +3,7 @@
    falls back to a structured email so no lead is ever lost. */
 (function(){
 'use strict';
-var LEAD_API = '';   /* e.g. 'https://lead-api.excelunit.com.hk/api/lead' — set when backend goes live */
+var LEAD_API = 'https://excelunit-lead-api.onrender.com/api/lead';
 var form = document.getElementById('rfqform');
 if (!form) return;
 
