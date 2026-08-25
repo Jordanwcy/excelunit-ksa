@@ -118,6 +118,7 @@ form.addEventListener('submit', function(e){
   var timer = ctl ? setTimeout(function(){ ctl.abort(); }, 15000) : null;
 
   function done(){
+    if (window.gtag) gtag('event','generate_lead',{method:'rfq_form',language:AR?'ar':'en'});
     form.hidden = true;
     var ok = document.getElementById('rfqok'); ok.hidden = false;
     var s = document.getElementById('oksum');
