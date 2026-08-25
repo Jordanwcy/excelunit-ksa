@@ -3,13 +3,17 @@
 <title>اطلب عرض سعر | Excel Unit Technology — السعودية</title>
 <meta name="description" content="اطلب أسعار وتوفر منتجات CommScope و SYSTIMAX في المملكة العربية السعودية — نرد خلال يوم عمل واحد.">
 <link rel="canonical" href="https://www.excelunit-ksa.com/quote/">
-<link rel="alternate" hreflang="ar" href="https://www.excelunit-ksa.com/quote/"><link rel="alternate" hreflang="en" href="https://www.excelunit-ksa.com/quote/en">
+<link rel="alternate" hreflang="ar" href="https://www.excelunit-ksa.com/quote/"><link rel="alternate" hreflang="en" href="https://www.excelunit-ksa.com/quote/en"><link rel="alternate" hreflang="x-default" href="https://www.excelunit-ksa.com/quote/">
+<meta name="theme-color" content="#07231A">
+<meta property="og:url" content="https://www.excelunit-ksa.com/quote/"><meta property="og:locale" content="ar_SA">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <meta property="og:title" content="اطلب عرض سعر | Excel Unit Technology — السعودية"><meta property="og:description" content="اطلب أسعار وتوفر منتجات CommScope و SYSTIMAX في المملكة العربية السعودية — نرد خلال يوم عمل واحد.">
 <meta property="og:image" content="https://www.excelunit-ksa.com/img/og-card.png"><meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='38' fill='none' stroke='%230E7A4F' stroke-width='16'/></svg>">
-<link rel="stylesheet" href="/assets/kfx.css?v=1787562946">
+<link rel="stylesheet" href="/assets/kfx.css?v=1787655383">
 <script>document.documentElement.classList.add('js')</script>
 <style>:root{--ink:#07231A;--deep:#0A3D2C;--em:#0E7A4F;--em2:#19A86C;--gold:#C9A24B;--sand:#F6F3EC;--tx:#12291F;--lt:#E9F2EC;--mut:#8FB3A2}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -128,13 +132,27 @@ textarea{min-height:84px;resize:vertical}
 footer{background:var(--ink);color:var(--mut);padding:36px 0;font-size:13.5px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
 footer a{color:var(--gold)}
-@media(max-width:860px){.nav{display:none}.hero{padding:64px 0 48px}.hero svg.fiber{width:100%;opacity:.35}}</style></head><body>
+.mbtn{display:none;background:none;border:0;cursor:pointer;padding:8px;margin-inline-start:auto}
+.mbtn span{display:block;width:22px;height:2px;background:#E9F2EC;margin:5px 0;border-radius:2px}
+.mnav{display:none;position:fixed;inset:0;z-index:99;background:rgba(7,35,26,.98);flex-direction:column;align-items:center;justify-content:center;gap:26px;font-size:20px}
+.mnav a{color:#E9F2EC;font-weight:600}
+.mnav .cta{font-size:17px;padding:13px 30px}
+.mnavclose{position:absolute;top:20px;inset-inline-end:22px;background:none;border:0;color:#C9A24B;font-size:30px;cursor:pointer}
+body.mnavopen .mnav{display:flex}
+@media(max-width:860px){.nav{display:none}.mbtn{display:block}.hero{padding:64px 0 48px}.hero svg.fiber{width:100%;opacity:.35}}</style></head><body>
 <div class="top"><div class="wrap">
 <a class="logo" href="/"><span class="ring"></span>EXCEL UNIT&nbsp;<small>السعودية</small></a>
 <nav class="nav"><a href="/">الرئيسية</a><a href="/ar/product">المنتجات</a><a href="/usecases/">سجل المشاريع</a><a href="/quote/">اتصل بنا</a></nav>
 <a class="lang" href="en">EN</a>
 <a class="cta" href="/quote/">اطلب عرض سعر</a>
+<button class="mbtn" id="mbtn" aria-label="القائمة" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
 </div></div>
+<div class="mnav" id="mnav" role="dialog" aria-label="القائمة"><button class="mnavclose" aria-label="إغلاق">✕</button><a href="/">الرئيسية</a><a href="/ar/product">المنتجات</a><a href="/usecases/">سجل المشاريع</a><a href="/ar/awards">الجوائز</a><a class="lang" href="en">EN</a><a class="cta" href="/quote/">اطلب عرض سعر</a></div>
+<script>(function(){var b=document.getElementById('mbtn'),m=document.getElementById('mnav');if(!b||!m)return;
+function t(o){document.body.classList.toggle('mnavopen',o);b.setAttribute('aria-expanded',o);if(!o)b.focus();}
+b.addEventListener('click',function(){t(!document.body.classList.contains('mnavopen'))});
+m.addEventListener('click',function(e){if(e.target.tagName==='A'||e.target.classList.contains('mnavclose'))t(false)});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')t(false)});})();</script>
 <div class="hero slim" style="background:linear-gradient(260deg,#07231A 28%,rgba(7,35,26,.72) 55%,rgba(10,61,44,.30)),url(/img/riyadh-kingdom.jpg) 18% 16%/cover no-repeat">
 <div class="wrap">
 <div class="kicker">CommScope® by Amphenol · SYSTIMAX® · NETCONNECT® · CPI Chatsworth® — موزّع معتمد</div>
@@ -142,23 +160,24 @@ footer a{color:var(--gold)}
 <p class="sub">أخبرنا بما تحتاجه مشاريعك — نرد خلال يوم عمل واحد بالأسعار والتوفر ومدة التوريد.</p>
 </div></div>
 <section id="quote"><div class="wrap"><div class="qcard">
-<form id="rfqform" novalidate>
+<form id="rfqform" novalidate data-lang="ar">
 <div class="qh">المنتجات المطلوبة *</div>
-<div class="qchips" data-name="products" data-multi><span class="qchip" dir="auto">كابل نحاسي Cat6 / Cat6A</span><span class="qchip" dir="auto">كابل ألياف OM4 / OS2</span><span class="qchip" dir="auto">أسلاك توصيل نحاسية Patch Cords</span><span class="qchip" dir="auto">ألياف MPO و Patch Cords</span><span class="qchip" dir="auto">لوحات Panels</span><span class="qchip" dir="auto">خزائن Racks (CPI)</span><span class="qchip" dir="auto">مقابس Jacks</span><span class="qchip" dir="auto">إكسسوارات Accessories</span></div>
+<div class="qchips" data-name="products" data-multi><button type="button" class="qchip" aria-pressed="false">كابل نحاسي Cat6 / Cat6A</button><button type="button" class="qchip" aria-pressed="false">كابل ألياف OM4 / OS2</button><button type="button" class="qchip" aria-pressed="false">أسلاك توصيل نحاسية</button><button type="button" class="qchip" aria-pressed="false">وصلات ألياف و MPO</button><button type="button" class="qchip" aria-pressed="false">لوحات توزيع</button><button type="button" class="qchip" aria-pressed="false">خزائن وحوامل CPI</button><button type="button" class="qchip" aria-pressed="false">مقابس ولوحات</button><button type="button" class="qchip" aria-pressed="false">إكسسوارات وأدوات</button></div>
 <div class="qh">القطاع</div>
-<div class="qchips" data-name="sector"><span class="qchip" dir="auto">مركز بيانات Data Center</span><span class="qchip" dir="auto">بنوك ومال Banking</span><span class="qchip" dir="auto">حكومي Government</span><span class="qchip" dir="auto">مكاتب Offices</span><span class="qchip" dir="auto">ضيافة Hospitality</span><span class="qchip" dir="auto">صحة Healthcare</span></div>
+<div class="qchips" data-name="sector"><button type="button" class="qchip" aria-pressed="false">مركز بيانات</button><button type="button" class="qchip" aria-pressed="false">بنوك ومال</button><button type="button" class="qchip" aria-pressed="false">قطاع حكومي</button><button type="button" class="qchip" aria-pressed="false">مكاتب تجارية</button><button type="button" class="qchip" aria-pressed="false">ضيافة</button><button type="button" class="qchip" aria-pressed="false">رعاية صحية</button></div>
 <div class="qh">الإطار الزمني</div>
-<div class="qchips" data-name="timeline"><span class="qchip" dir="auto">عاجل Urgent (<2wk)</span><span class="qchip" dir="auto">1–3 أشهر months</span><span class="qchip" dir="auto">3–6 أشهر months</span><span class="qchip" dir="auto">تخطيط Planning</span></div>
+<div class="qchips" data-name="timeline"><button type="button" class="qchip" aria-pressed="false">عاجل (أقل من أسبوعين)</button><button type="button" class="qchip" aria-pressed="false">من شهر إلى 3 أشهر</button><button type="button" class="qchip" aria-pressed="false">من 3 إلى 6 أشهر</button><button type="button" class="qchip" aria-pressed="false">مرحلة التخطيط</button></div>
 <div class="qh">أرقام القطع / قائمة الكميات (اختياري)</div>
-<textarea id="rpns" placeholder="مثال: 760107318 × 50"></textarea>
+<textarea id="rpns" name="part_numbers" placeholder="مثال: 760107318 × 50"></textarea>
+<input type="text" name="website" id="rhp" tabindex="-1" autocomplete="off" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none" aria-hidden="true">
 <div class="qh">إرفاق ملفات (BOM / مخططات) — Excel, PDF, CAD · حتى 5 ملفات × 15MB</div>
 <label class="attach" style="display:block">⇪ <input id="rfiles" type="file" multiple accept=".pdf,.xls,.xlsx,.csv,.doc,.docx,.dwg,.dxf,.png,.jpg,.jpeg,.zip" style="display:none">إرفاق ملفات (BOM / مخططات) </label>
 <div id="rflist"></div>
 <div class="frow" style="margin-top:18px">
-<div><div class="qh" style="margin-top:0">الاسم *</div><input id="rname" type="text"></div>
-<div><div class="qh" style="margin-top:0">الشركة *</div><input id="rcompany" type="text"></div>
-<div><div class="qh" style="margin-top:0">البريد الإلكتروني *</div><input id="remail" type="email"></div>
-<div><div class="qh" style="margin-top:0">الهاتف / واتساب</div><input id="rphone" type="tel"></div>
+<div><label class="qh" style="margin-top:0;display:block" for="rname">الاسم *</label><input id="rname" name="name" type="text" required autocomplete="name"></div>
+<div><label class="qh" style="margin-top:0;display:block" for="rcompany">الشركة *</label><input id="rcompany" name="organization" type="text" required autocomplete="organization"></div>
+<div><label class="qh" style="margin-top:0;display:block" for="remail">البريد الإلكتروني *</label><input id="remail" name="email" type="email" required autocomplete="email"></div>
+<div><label class="qh" style="margin-top:0;display:block" for="rphone">الهاتف / واتساب</label><input id="rphone" name="tel" type="tel" autocomplete="tel"></div>
 </div>
 <button class="rsubmit" type="submit">إرسال الطلب</button>
 <div id="rerr" class="rerr"></div>
@@ -180,7 +199,7 @@ footer a{color:var(--gold)}
 <div style="max-width:34em">
 <div style="display:flex;align-items:center;gap:9px;color:#fff;font-weight:700;letter-spacing:.06em;margin-bottom:14px"><span style="width:14px;height:14px;border:4px solid #19A86C;border-radius:50%;display:inline-block"></span>EXCEL UNIT&nbsp;<span style="color:#C9A24B">— السعودية</span></div>
 <p style="margin:0 0 12px;line-height:1.85">شركة تابعة لمجموعة Excel Unit Technology Ltd (هونغ كونغ) — توزيع معتمد لحلول CommScope® (SYSTIMAX® · NETCONNECT®) و CPI Chatsworth® في المملكة العربية السعودية.</p>
-<p style="margin:0;line-height:1.85;color:#6E8B7D">مرخّصون للتجارة والاستيراد — سجل تجاري رقم 7054452607<br>حي العليا، طريق الأمير سلطان بن عبدالعزيز، الرياض</p></div>
+<p style="margin:0;line-height:1.85;color:#7D9A8C">مرخّصون للتجارة والاستيراد — سجل تجاري رقم 7054452607<br>حي العليا، طريق الأمير سلطان بن عبدالعزيز، الرياض</p></div>
 <div><h4 style="color:#C9A24B;font-size:13px;margin:0 0 14px">الموقع</h4>
 <a style="display:block;color:#B9CFC2;margin:0 0 9px;text-decoration:none" href="/">الرئيسية</a>
 <a style="display:block;color:#B9CFC2;margin:0 0 9px;text-decoration:none" href="/ar/product">المنتجات</a>
@@ -190,12 +209,12 @@ footer a{color:var(--gold)}
 <div><h4 style="color:#C9A24B;font-size:13px;margin:0 0 14px">اتصل بنا</h4>
 <a style="display:block;color:#B9CFC2;margin:0 0 9px;text-decoration:none" href="mailto:sales@excelunit-ksa.com?cc=jordan@excelunit.com.hk">sales@excelunit-ksa.com</a>
 <a style="display:block;color:#B9CFC2;margin:0 0 9px;text-decoration:none" href="mailto:jordan@excelunit.com.hk">jordan@excelunit.com.hk</a>
-<p style="margin:10px 0 0;color:#6E8B7D">الرياض · المملكة العربية السعودية</p></div>
+<p style="margin:10px 0 0;color:#7D9A8C">الرياض · المملكة العربية السعودية</p></div>
 </div>
-<div style="max-width:1100px;margin:30px auto 0;padding:16px 22px 28px;border-top:1px solid rgba(255,255,255,.08);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;color:#6E8B7D;font-size:12.5px">
+<div style="max-width:1100px;margin:30px auto 0;padding:16px 22px 28px;border-top:1px solid rgba(255,255,255,.08);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;color:#7D9A8C;font-size:12.5px">
 <span>© Excel Unit Technology — KSA</span>
 <span>جميع العلامات التجارية المذكورة ملك لأصحابها</span>
 </div></footer>
-<script src="/assets/rfq.js?v=1787562946"></script>
-<script src="/assets/kfx.js?v=1787562946"></script>
+<script src="/assets/rfq.js?v=1787655383"></script>
+<script src="/assets/kfx.js?v=1787655383"></script>
 </body></html>

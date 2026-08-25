@@ -12,6 +12,17 @@ if ('IntersectionObserver' in window) {
     });
   }, {threshold: .12, rootMargin: '0px 0px -6% 0px'});
   els.forEach(function(el){ io.observe(el); });
+  function sweep(){
+    els.forEach(function(el){
+      if (el.classList.contains('on')) return;
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('on');
+    });
+  }
+  window.addEventListener('load', sweep);
+  window.addEventListener('pageshow', sweep);
+  window.addEventListener('hashchange', function(){ setTimeout(sweep, 60); });
+  setTimeout(sweep, 900);
 } else { els.forEach(function(el){ el.classList.add('on'); }); }
 [].slice.call(document.querySelectorAll('[data-count]')).forEach(function(el){
   var io2 = new IntersectionObserver(function(entries){
