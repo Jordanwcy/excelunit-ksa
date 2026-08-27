@@ -19,6 +19,8 @@ var sel='#industries .ind,.why,.svc,.sec h2,.sec .lead,.mission h2,.mission p,.m
 var els=[].slice.call(document.querySelectorAll(sel));
 els.forEach(function(e,i){e.classList.add('rv');e.style.transitionDelay=((i%6)*70)+'ms';});
 var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target);}});},{threshold:.12});
+function rvsweep(){els.forEach(function(e){if(e.classList.contains('on'))return;var r=e.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)e.classList.add('on');});}
+addEventListener('load',rvsweep);addEventListener('pageshow',rvsweep);addEventListener('hashchange',function(){setTimeout(rvsweep,60);});setTimeout(rvsweep,900);
 els.forEach(function(e){io.observe(e);});
 function fmt(n,sh){if(sh){return n>=1000000?Math.round(n/1000000)+'M':n>=1000?Math.round(n/1000)+'K':''+n}return n.toLocaleString('en-US')}
 var cs=[].slice.call(document.querySelectorAll('[data-count]'));

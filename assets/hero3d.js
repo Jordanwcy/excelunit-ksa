@@ -5,7 +5,8 @@ var tries=0;
 function boot(){
 if(window.innerWidth===0 || document.getElementById('hero3d').clientWidth===0){ if(++tries<40) return setTimeout(boot,250); return; }
 if(window.innerWidth < 1080) return;
-var host=document.getElementById('hero3d'); if(!host||!window.THREE) return;
+var host=document.getElementById('hero3d'); if(!host) return;
+if(!window.THREE){ var sc=document.createElement('script'); sc.src='assets/three.min.js'; sc.onload=boot; document.head.appendChild(sc); return; }
 var W=host.clientWidth, H=host.clientHeight;
 var renderer=new THREE.WebGLRenderer({canvas:host, alpha:true, antialias:true});
 renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
