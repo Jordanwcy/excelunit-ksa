@@ -168,7 +168,7 @@ function answer(msg){
     a.href=R+'quote'; c.appendChild(a);
     log.appendChild(c); return;
   }
-  if (p.intent==='contact'){ bubble('bot','✉ sales@excelunit-ksa.com · jordan@excelunit.com.hk<br>Al Olaya District, Prince Sultan Ibn Abdulaziz Road, Riyadh, Kingdom of Saudi Arabia'); return; }
+  if (p.intent==='contact'){ bubble('bot','✉ sales@excelunit-ksa.com · WhatsApp +966 55 546 9380<br>Al Olaya District, Prince Sultan Ibn Abdulaziz Road, Riyadh, Kingdom of Saudi Arabia'); return; }
   if (p.reset){ state={brand:'',cat:'',catSlug:'',terms:[],stock:false}; bubble('bot','Fresh start — what are you looking for? لنبدأ من جديد — ماذا تبحث عنه؟'); return; }
   // bare part-number / SKU lookup -> global search, ignore previous filters
   var lone = msg.trim().toLowerCase();

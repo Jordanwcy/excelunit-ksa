@@ -571,3 +571,36 @@ body.mnav .top{background:var(--navy)}
 .nav a:after{display:none}
 .nav .mcta{display:block;margin-top:24px;background:var(--blue);text-align:center;border-radius:10px;padding:15px;font-weight:700;border-bottom:0;font-size:16px}
 }
+/* Engineered to the core — Cat6A construction band */
+.cable-sec{background:linear-gradient(140deg,#07231A,#0C1F3E 55%,#07231A);border-top:1px solid #12294E;border-bottom:1px solid #12294E}
+.cable-sec h2{color:#fff}
+.cable-sec h2:after{background:var(--blue)}
+.cable-sec .lead{color:#A9BBD9}
+.cablerow{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:44px;align-items:center}
+.cable3dwrap{position:relative;height:460px;border-radius:18px;background:radial-gradient(58% 52% at 50% 50%,rgba(47,107,255,.16),transparent 72%)}
+#cable3d{width:100%;height:100%;display:block;cursor:grab}
+#cable3d.dragging{cursor:grabbing}
+.cablehint{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-size:11.5px;color:#7F97C4;letter-spacing:.05em;pointer-events:none}
+.cablepills{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.cpill{font-family:inherit;font-size:13.5px;font-weight:600;letter-spacing:.02em;color:#B9CCEB;background:rgba(24,48,96,.35);border:1px solid rgba(130,160,220,.3);border-radius:999px;padding:9px 16px;cursor:pointer;transition:.18s}
+.cpill:hover{border-color:rgba(130,170,255,.6);color:#fff}
+.cpill.on{background:var(--blue);border-color:var(--blue);color:#fff}
+p.cablelead{display:none}
+p.cablelead.on{display:block}
+.cablecta{display:none}
+.cablecta.on{display:flex;align-items:center;flex-wrap:wrap;gap:4px}
+.cablelegend{list-style:none;margin:20px 0 24px;padding:0;display:none;gap:10px}
+.cablelegend.on{display:grid}
+.cablelegend li{display:grid;grid-template-columns:14px 1fr;gap:12px;align-items:start;padding:11px 13px;border:1px solid rgba(130,160,220,.18);border-radius:12px;transition:.18s;cursor:default}
+.cablelegend li:hover{border-color:rgba(120,170,255,.55);background:rgba(30,60,120,.28)}
+.cablelegend i{width:12px;height:12px;border-radius:50%;background:var(--dot);box-shadow:0 0 10px var(--dot);margin-top:4px}
+.cablelegend b{color:#fff;font-size:14px;display:block;margin-bottom:2px}
+.cablelegend b em{font-style:normal;color:#52C08A;font-weight:600;margin-left:6px}
+.cablelegend span{color:#9FB2D5;font-size:13px;line-height:1.55;display:block}
+.cablelink{color:#52C08A;font-size:14px;font-weight:600;text-decoration:none;margin-left:18px}
+.cablelink:hover{text-decoration:underline}
+@media(max-width:1080px){.cablerow{grid-template-columns:1fr}.cable3dwrap{display:none}}
+/* spotlight image depth layer */
+.simg{overflow:hidden}
+.simg .spar{position:absolute;inset:-30px 0;background-size:cover;background-position:center;will-change:transform;z-index:0}
+.simg .scap{z-index:2}
